@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getById } from './services/fetch-utils';
 
-export default function Cat({ Cats }) {
+export default function Cat() {
   const [cat, setCat] = useState({});
   const { id } = useParams();
 
@@ -13,8 +13,7 @@ export default function Cat({ Cats }) {
       setCat(cat);
     }
     load();
-  }, []);
-  console.log(cat);
+  }, [id]);
 
-  return <div className="Cat">{<p>man. look its a cat</p>}</div>;
+  return <div className="Cat">{<p>{cat.name}</p>}</div>;
 }
