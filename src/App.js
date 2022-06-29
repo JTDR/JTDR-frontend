@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react
 import CatList from './CatList';
 import { useState, useEffect } from 'react';
 import { getCats } from './services/fetch-utils';
+import Cat from './Cat';
 
 function App() {
   const [catList, setCatList] = useState([]);
@@ -25,6 +26,9 @@ function App() {
           <Switch>
             <Route exact path="/cats">
               <CatList catList={catList} />
+            </Route>
+            <Route exact path="/cats/:id">
+              <Cat />
             </Route>
           </Switch>
         </main>
