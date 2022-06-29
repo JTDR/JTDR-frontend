@@ -7,13 +7,11 @@ import { getCats } from './services/fetch-utils';
 function App() {
   const [catList, setCatList] = useState([]);
 
-  async function load() {
-    const cats = await getCats();
-    console.log(cats);
-    setCatList(cats.data.results);
-  }
-
   useEffect(() => {
+    async function load() {
+      const cats = await getCats();
+      setCatList(cats);
+    }
     load();
   }, []);
 

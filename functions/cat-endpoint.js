@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
   try {
     const response = await fetch('http://localhost:7890/cats');
     const data = await response.json();
-    const json = JSON.stringify(data);
+    const json = JSON.stringify({ data });
 
     return {
       statusCode: 200,
