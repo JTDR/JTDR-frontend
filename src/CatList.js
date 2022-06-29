@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import Cat from './Cat.js';
 
 export default function CatList({ catList }) {
@@ -6,7 +7,7 @@ export default function CatList({ catList }) {
   return (
     <div className="Cats-list">
       {catList.map((cat) => (
-        <p key={cat.id}>{cat.name}</p>
+        <Link to={`/cats/${id}`}> {cat.name} </Link>
       ))}
     </div>
   );
