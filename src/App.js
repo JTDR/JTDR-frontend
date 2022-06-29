@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { getCats } from './services/fetch-utils';
 import Cat from './Cat';
 import DeletePage from './DeletePage';
+import UpdatePage from './UpdatePage';
 
 function App() {
   const [catList, setCatList] = useState([]);
@@ -22,9 +23,8 @@ function App() {
     <Router>
       <div className="App">
         <header>
-          <NavLink to="/cats">Home</NavLink>
+          <NavLink to="/cats">Home</NavLink><br/>
           <NavLink to="/create">Add A Cat</NavLink>
-          <NavLink to="/delete">Delete A Cat</NavLink>
         </header>
         <main>
           <Switch>
@@ -39,6 +39,9 @@ function App() {
             </Route>
             <Route exact path="/delete/:id">
               <DeletePage />
+            </Route>
+            <Route exact path="/update/:id">
+              <UpdatePage />
             </Route>
           </Switch>
         </main>

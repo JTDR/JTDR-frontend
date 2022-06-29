@@ -35,3 +35,15 @@ export async function addCat(cat) {
   const data = await rawResponse.json();
   return data;
 }
+
+export async function updateCat(cat) {
+  const rawResponse = await fetch(`${process.env.REACT_APP_API_URL}/cats/${cat.id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+    body: JSON.stringify(cat),
+  });
+  const data = await rawResponse.json();
+  return data;
+}

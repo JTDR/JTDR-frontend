@@ -9,10 +9,13 @@ export default function CatList({ catList }) {
         <>
           <Link to={`/cats/${cat.id}`} key={cat.id + 'detail'}>
             {cat.name} details
-          </Link>
+          </Link><br/>
           <Link to={`/delete/${cat.id}`} key={cat.id + 'delete'}>
             {cat.name} delete
-          </Link>
+          </Link><br/>
+          <Link to={`/update/${cat.id}`} key={cat.id + 'update'}>
+            {cat.name} update
+          </Link><br/>
         </>
       ))}
     </div>

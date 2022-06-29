@@ -15,5 +15,11 @@ export default function Cat() {
     load();
   }, [id]);
 
-  return <div className="Cat">{<p>{cat.name}</p>}</div>;
+  return (
+    <div className="Cat">
+      <p>{cat.name}</p>
+      <p>{cat.age} years old</p>
+      <p>Eye colour: {cat.eyes}</p>
+      <p>Fur colour: {cat.fur}</p>
+    </div>);
 }
