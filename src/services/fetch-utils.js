@@ -12,6 +12,18 @@ export async function getById(id) {
   return data;
 }
 
+export async function deleteById(id) {
+  const rawResponse = await fetch(`${process.env.REACT_APP_API_URL}/cats/${id}`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors'
+  });
+  const data = await rawResponse.json();
+
+  return data;
+}
+
 export async function addCat(cat) {
   const rawResponse = await fetch(`${process.env.REACT_APP_API_URL}/cats`, {
     method: 'POST',

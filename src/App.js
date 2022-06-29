@@ -5,6 +5,7 @@ import CreatePage from './CreatePage';
 import { useState, useEffect } from 'react';
 import { getCats } from './services/fetch-utils';
 import Cat from './Cat';
+import DeletePage from './DeletePage';
 
 function App() {
   const [catList, setCatList] = useState([]);
@@ -23,6 +24,7 @@ function App() {
         <header>
           <NavLink to="/cats">Home</NavLink>
           <NavLink to="/create">Add A Cat</NavLink>
+          <NavLink to="/delete">Delete A Cat</NavLink>
         </header>
         <main>
           <Switch>
@@ -34,6 +36,9 @@ function App() {
             </Route>
             <Route exact path="/create">
               <CreatePage />
+            </Route>
+            <Route exact path="/delete/:id">
+              <DeletePage />
             </Route>
           </Switch>
         </main>
