@@ -4,7 +4,7 @@ import CatList from './CatList';
 import CreatePage from './CreatePage';
 import { useState, useEffect } from 'react';
 import { getCats } from './services/fetch-utils';
-import Cat from './Cat';
+import CatDetail from './CatDetail';
 import DeletePage from './DeletePage';
 import UpdatePage from './UpdatePage';
 
@@ -32,7 +32,7 @@ function App() {
               <CatList catList={catList} />
             </Route>
             <Route exact path="/cats/:id">
-              <Cat />
+              <CatDetail />
             </Route>
             <Route exact path="/create">
               <CreatePage />

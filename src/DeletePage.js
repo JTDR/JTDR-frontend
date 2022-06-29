@@ -3,7 +3,6 @@ import { useHistory, useParams } from 'react-router-dom';
 import { deleteById } from './services/fetch-utils';
 
 export default function DeletePage() {
-
   const history = useHistory();
   const { id } = useParams();
 
@@ -13,8 +12,9 @@ export default function DeletePage() {
   }
 
   return (
-    <div>
-      <button onClick={handleDelete}>nooo dont delete him hes a precious little boy</button>
+    <div className="delete-page">
+      <h2>nooo dont delete him hes a precious little boy</h2>
+      <button onClick={handleDelete}>too bad</button>
     </div>
   );
 }

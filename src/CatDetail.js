@@ -16,10 +16,11 @@ export default function Cat() {
   }, [id]);
 
   return (
-    <div className="Cat">
-      <p>{cat.name}</p>
+    <div className="cat-detail">
+      <p className="cat-name">{cat.name}</p>
       <p>{cat.age} years old</p>
       <p>Eye colour: {cat.eyes}</p>
       <p>Fur colour: {cat.fur}</p>
-    </div>);
+    </div>
+  );
 }
