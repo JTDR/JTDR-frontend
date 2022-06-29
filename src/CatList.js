@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 
 export default function CatList({ catList }) {
   return (
-    <div className="Cats-list">
+    <div className="cat-list">
       {catList.map((cat) => (
-        <>
-          <Link to={`/cats/${cat.id}`} key={cat.id + 'detail'}>
+        <div className="cat-item" key={cat.id}>
+          <Link to={`/cats/${cat.id}`} className="cat-item-details" key={cat.id + 'details'}>
             {cat.name} details
-          </Link><br/>
-          <Link to={`/delete/${cat.id}`} key={cat.id + 'delete'}>
-            {cat.name} delete
-          </Link><br/>
-          <Link to={`/update/${cat.id}`} key={cat.id + 'update'}>
-            {cat.name} update
-          </Link><br/>
-        </>
+          </Link>
+          <Link to={`/update/${cat.id}`} className="cat-item-update" key={cat.id + 'update'}>
+            Update {cat.name}
+          </Link>
+          <Link to={`/delete/${cat.id}`} className="cat-item-delete" key={cat.id + 'delete'}>
+            Delete {cat.name}
+          </Link>
+        </div>
       ))}
     </div>
   );

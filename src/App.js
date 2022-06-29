@@ -23,7 +23,7 @@ function App() {
     <Router>
       <div className="App">
         <header>
-          <NavLink to="/cats">Home</NavLink><br/>
+          <NavLink to="/cats">Home</NavLink>
           <NavLink to="/create">Add A Cat</NavLink>
         </header>
         <main>
