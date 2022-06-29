@@ -7,7 +7,9 @@ export default function CatList({ catList }) {
   return (
     <div className="Cats-list">
       {catList.map((cat) => (
-        <Link to={`/cats/${id}`}> {cat.name} </Link>
+        <Link to={`/cats/${cat.id}`} key={cat.id}>
+          {cat.name}
+        </Link>
       ))}
     </div>
   );
