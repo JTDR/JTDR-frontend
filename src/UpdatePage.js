@@ -27,8 +27,8 @@ export default function CreatePage() {
   }
 
   return (
-    <div className="create">
-      <form className="create-form" onSubmit={handleSubmit}>
+    <div className="update">
+      <form className="update-form" onSubmit={handleSubmit}>
         <label>
           Cat Name
           <input

@@ -44,3 +44,33 @@ main {
 .cat-item-delete, .cat-item-update {
   font-size: 0.8rem;
 }
+
+.create, .update {
+  width: 450px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+  font-size: 1.2rem;
+}
+
+form input {
+  text-align: center;
+  margin: 3px;
+  margin-bottom: 5px;
+}
+
+form button {
+  margin: 5px;
+}
