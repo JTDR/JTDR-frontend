@@ -1,12 +1,22 @@
 export async function getCats() {
-  const rawResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/cats`);
+  const rawResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/cats`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+  });
   const data = await rawResponse.json();
 
   return data;
 }
 
 export async function getById(id) {
-  const rawResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/cats/${id}`);
+  const rawResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/cats/${id}`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+  });
   const data = await rawResponse.json();
 
   return data;
@@ -69,5 +79,6 @@ export async function signInUserFunction(user) {
     body: JSON.stringify(user),
   });
   const data = await response.json();
+  console.log(data);
   return data;
 }

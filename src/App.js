@@ -11,6 +11,7 @@ import AuthPage from './AuthPage';
 
 function App() {
   const [catList, setCatList] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     async function load() {
@@ -18,7 +19,8 @@ function App() {
       setCatList(cats);
     }
     load();
-  }, [catList]);
+    setIsLoaded(true);
+  }, [isLoaded]);
 
   return (
     <Router>

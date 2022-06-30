@@ -29,7 +29,7 @@ export default function AuthPage() {
             email
             <input
               className="sign-up-input"
-              value={signUpUser}
+              value={signUpUser.email}
               onChange={(e) => setSignUpUser({ ...signUpUser, email: e.target.value })}
             />
           </label>
@@ -37,7 +37,7 @@ export default function AuthPage() {
             password
             <input
               className="sign-up-input"
-              value={signUpUser}
+              value={signUpUser.password}
               onChange={(e) => setSignUpUser({ ...signUpUser, password: e.target.value })}
             />
           </label>
@@ -49,7 +49,7 @@ export default function AuthPage() {
             email
             <input
               className="sign-in-input"
-              value={signInUser}
+              value={signInUser.email}
               onChange={(e) => setSignInUser({ ...signInUser, email: e.target.value })}
             />
           </label>
@@ -57,7 +57,7 @@ export default function AuthPage() {
             password
             <input
               className="sign-in-input"
-              value={signInUser}
+              value={signInUser.password}
               onChange={(e) => setSignInUser({ ...signInUser, password: e.target.value })}
             />
           </label>
