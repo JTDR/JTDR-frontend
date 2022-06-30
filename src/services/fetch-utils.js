@@ -47,3 +47,27 @@ export async function updateCat(cat) {
   const data = await rawResponse.json();
   return data;
 }
+
+export async function signUpUserFunction(user) {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+    body: JSON.stringify(user),
+  });
+  const data = await response.json();
+  return data;
+}
+
+export async function signInUserFunction(user) {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users/sessions`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+    body: JSON.stringify(user),
+  });
+  const data = await response.json();
+  return data;
+}

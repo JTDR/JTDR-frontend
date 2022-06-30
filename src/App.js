@@ -7,6 +7,7 @@ import { getCats } from './services/fetch-utils';
 import CatDetail from './CatDetail';
 import DeletePage from './DeletePage';
 import UpdatePage from './UpdatePage';
+import AuthPage from './AuthPage';
 
 function App() {
   const [catList, setCatList] = useState([]);
@@ -28,6 +29,9 @@ function App() {
         </header>
         <main>
           <Switch>
+            <Route exact path="/">
+              <AuthPage />
+            </Route>
             <Route exact path="/cats">
               <CatList catList={catList} />
             </Route>
