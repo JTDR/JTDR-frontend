@@ -38,6 +38,7 @@ export default function AuthPage({ setCurrentUser }) {
             <input
               className="sign-up-input"
               value={signUpUser.password}
+              type="password"
               onChange={(e) => setSignUpUser({ ...signUpUser, password: e.target.value })}
             />
           </label>
@@ -58,6 +59,7 @@ export default function AuthPage({ setCurrentUser }) {
             <input
               className="sign-in-input"
               value={signInUser.password}
+              type="password"
               onChange={(e) => setSignInUser({ ...signInUser, password: e.target.value })}
             />
           </label>
