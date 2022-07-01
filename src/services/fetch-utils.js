@@ -83,14 +83,12 @@ export async function signInUserFunction(user) {
 }
 
 export async function logoutUser() {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users/sessions`, {
+  await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users/sessions`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
-    mode: 'cors'
+    mode: 'cors',
   });
-  const data = await response.json();
-  return data;
 }
 
 export async function getUser() {
@@ -98,8 +96,9 @@ export async function getUser() {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
-    mode: 'cors'
+    mode: 'cors',
   });
   const data = await response.json();
+
   return data;
 }

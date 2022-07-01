@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
-import { signInUserFunction, signUpUserFunction } from './services/fetch-utils';
+import { getUser, signInUserFunction, signUpUserFunction } from './services/fetch-utils';
 
 export default function AuthPage({ setCurrentUser }) {
   const [signInUser, setSignInUser] = useState({ email: '', password: '' });
   const [signUpUser, setSignUpUser] = useState({ email: '', password: '' });
-  const history = useHistory();
 
   async function handleSignUp(e) {
     e.preventDefault();
     await signUpUserFunction(signUpUser);
     await signInUserFunction(signUpUser);
-    history.push('/cats');
+    const user = await getUser();
+    setCurrentUser(user);
   }
 
   async function handleSignIn(e) {
     e.preventDefault();
     await signInUserFunction(signInUser);
-    history.push('/cats');
+    const user = await getUser();
+    setCurrentUser(user);
   }
   return (
     <div>
