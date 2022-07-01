@@ -79,6 +79,27 @@ export async function signInUserFunction(user) {
     body: JSON.stringify(user),
   });
   const data = await response.json();
-  console.log(data);
+  return data;
+}
+
+export async function logoutUser() {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users/sessions`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors'
+  });
+  const data = await response.json();
+  return data;
+}
+
+export async function getUser() {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users/me`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors'
+  });
+  const data = await response.json();
   return data;
 }

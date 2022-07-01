@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { signInUserFunction, signUpUserFunction } from './services/fetch-utils';
 
-export default function AuthPage() {
+export default function AuthPage({ setCurrentUser }) {
   const [signInUser, setSignInUser] = useState({ email: '', password: '' });
   const [signUpUser, setSignUpUser] = useState({ email: '', password: '' });
   const history = useHistory();
